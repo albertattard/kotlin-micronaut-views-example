@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{layoutFile :: layout(~{::title}, ~{::header}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather Forecast</title>
+</head>
+<body>
+<header>Weather Forecast</header>
+<section>
+    <!--/*@thymesVar id="caption" type="String"*/-->
+    <span th:text="${caption}"></span>
+</section>
+</body>
+</html>

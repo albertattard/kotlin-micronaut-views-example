@@ -1,0 +1,21 @@
+micronaut:
+  application:
+    name: kotlin-micronaut-example
+  io:
+    watch:
+      paths: src/main
+      restart: true
+  endpoints:
+    refresh:
+      enabled: true
+      sensitive: false
+  security:
+    enabled: false
+  router:
+    static-resources:
+      default:
+        mapping: /**
+        paths:
+          - classpath:static
+
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title, header, content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:replace="${title}">Layout Title</title>
+    <link th:href="@{/css/bootstrap.min.css}" href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/sticky-footer-navbar.css}" href="/css/sticky-footer-navbar.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<header th:replace="${header}">Page Header</header>
+<div th:replace="${content}">
+    <p>Layout content</p>
+</div>
+<footer class="footer">
+    <div class="container">
+        An example of Micronaut Views with Thymeleaf and Kotlin -
+        &copy; 2020 Copyright:
+        <a href="https://github.com/albertattard/kotlin-micronaut-views-example">
+            https://github.com/albertattard/kotlin-micronaut-views-example
+        </a>
+    </div>
+</footer>
+</body>
+</html>
