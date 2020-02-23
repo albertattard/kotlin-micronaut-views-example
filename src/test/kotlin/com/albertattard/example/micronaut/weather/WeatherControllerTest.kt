@@ -17,11 +17,10 @@ class WeatherControllerTest(
     private val service: WeatherService,
     @Client("/weather") private val client: RxHttpClient
 ) : StringSpec({
-    "should return the weather returned by the weather service" {
+    "should return the forecast returned by the weather service" {
         val mock = getMock(service)
 
-        val forecast =
-            Forecast("Sunny Mirconaut Framework")
+        val forecast = Forecast("Sunny Mirconaut Framework")
         every { mock.latestForecast() } returns forecast
 
         val result = client.toBlocking().retrieve("/forecast", Forecast::class.java)
@@ -29,6 +28,7 @@ class WeatherControllerTest(
 
         verify(exactly = 1) { mock.latestForecast() }
 
+        verify(exactly = 2) { mock.hashCode() }
         verify(exactly = 1) { mock.toString() }
         confirmVerified(mock)
     }

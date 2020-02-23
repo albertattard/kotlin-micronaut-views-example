@@ -22,4 +22,3 @@ class WeatherController internal constructor(
         return service.latestForecast()
     }
 }
-

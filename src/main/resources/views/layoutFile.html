@@ -2,19 +2,27 @@
 <html th:fragment="layout (title, header, content)" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:replace="${title}">Layout Title</title>
-    <link th:href="@{/css/bootstrap.min.css}" href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/css/sticky-footer-navbar.css}" href="/css/sticky-footer-navbar.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/materialize.min.css}" href="/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/font-awesome.min.css}" href="/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<header th:replace="${header}">Page Header</header>
+<nav>
+    <div class="nav-wrapper">
+        <a th:replace="${header}" class="brand-logo">Micronaut Views</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="https://micronaut-projects.github.io/micronaut-views/latest/guide/">Micronaut Views</a></li>
+            <li><a href="https://materializecss.com/">Materialize CSS</a></li>
+        </ul>
+    </div>
+</nav>
 <div th:replace="${content}">
     <p>Layout content</p>
 </div>
-<footer class="footer">
-    <div class="container">
+<footer class="page-footer">
+    <div>
         An example of Micronaut Views with Thymeleaf and Kotlin -
         &copy; 2020 Copyright:
-        <a href="https://github.com/albertattard/kotlin-micronaut-views-example">
+        <a class="grey-text text-lighten-3" href="https://github.com/albertattard/kotlin-micronaut-views-example">
             https://github.com/albertattard/kotlin-micronaut-views-example
         </a>
     </div>
